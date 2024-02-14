@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Lexend";   /*Can be any text*/
+  src: local("Lexend-VariableFont_wght"),
+    url("/src/fonts/Lexend-VariableFont_wght.ttf") format("truetype");
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+}
+
+body{
+  background-color: #EDEDED;
+  overflow: scroll;
+}
+
+body main{
+  scroll-snap-type: y proximity;
+}
+
+body main:nth-child(){
+  scroll-snap-align: center;
+}
+
+header{
+  display: flex;
+  height: 100vh;
+  justify-content: space-evenly;
+  align-items: center;
+  scroll-snap-align: center;
+}
+
+header img{
+  object-fit: cover;
+}
+
+nav{
+  position: sticky;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+nav div{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  background-color: #ADC958;
+  padding: 10px;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+nav ul li{
+  flex: 1;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li:hover{
+  background-color: #B6DDC1;
+  transition: 0.5s;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+nav ul li.active{
+  background-color: #80C29B;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+nav ul li img{
+  width: 100%;
+  height: 100%;
+}
+
+#desc{
+  height: 100vh;
+}
+
+#desc .question{
+  position: relative;
+  padding: 150px;
+}
+
+#desc .question div{
+  position: absolute;
+  right: 0;
+  width: 400px;
+  background-color: #80C29B;
+  padding: 25px 0 25px 25px;
+  font-size: 30px;
+  border-radius: 20px 0 0 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#desc .desc-1, #desc .desc-2{
+  display: flex;
+  gap: 50px;
+  padding: 0 50px;
+}
+
+#desc .desc-1 img, #desc .desc-2 img{
+  height: 300px;
+  object-fit: cover;
+}
+
+#desc .desc-1 p, #desc .desc-2 p{
+  flex: 4;
+  font-size: 25px;
+  text-align: justify;
+}
+
+#newsletter{
+  height: 100vh;
+}
+
+#newsletter .question{
+  position: relative;
+  padding: 150px;
+}
+
+#newsletter .question div{
+  position: absolute;
+  left: 0;
+  width: 400px;
+  text-align: right;
+  background-color: #80C29B;
+  padding: 25px 25px 25px 0;
+  font-size: 30px;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#previsions{
+  height: 100vh;
+}
+
+#previsions .question{
+  position: relative;
+  padding: 150px;
+}
+
+#previsions .question div{
+  position: absolute;
+  right: 0;
+  width: 400px;
+  background-color: #80C29B;
+  padding: 25px 0 25px 25px;
+  font-size: 30px;
+  border-radius: 20px 0 0 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}

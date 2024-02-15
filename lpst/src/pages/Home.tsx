@@ -4,6 +4,7 @@ import Description from '../components/Description'
 import Newsletter from '../components/Newsletter'
 import Previsions from '../components/Previsions'
 import Agenda from '../components/Agenda'
+import Projets from '../components/Projets'
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
                 <Newsletter />
                 <Previsions />
                 <Agenda />
+                <Projets />
             </main>
         </>
     )

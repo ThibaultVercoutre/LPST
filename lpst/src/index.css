@@ -91,6 +91,9 @@ nav ul li img{
 
 #desc{
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 #desc .question{
@@ -197,7 +200,7 @@ nav ul li img{
 }
 
 #agenda .select_mounth > div{
-  width: 400px;
+  width: 500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -223,5 +226,133 @@ nav ul li img{
 #agenda .tableau{
   flex: 1;
   margin: 20px;
-  background-color: red;
+  /* background-color: red; */
+  display: flex;
+  border-spacing: 5px;
+}
+
+#agenda .tableau table{
+  flex: 2;
+  height: 100%;
+  border-collapse: collapse;
+  border-spacing: 10px;
+  width: 100%;
+  /* border-collapse: separate; */
+  border-spacing: 8px;
+  table-layout: fixed;
+}
+
+#agenda .tableau table thead tr th{
+  background-color: #B6DDC1;
+  padding: 20px;
+}
+
+#agenda .tableau table tbody tr td{
+  background-color: #B6DDC1;
+  text-align: center;
+  margin: 5px;
+  padding: 10px;
+  border: 10px solid #EDEDED;
+}
+
+#agenda .tableau table tbody tr td.day.active {
+  background-color: #80C29B;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+#agenda .tableau table tbody tr td.day:hover{
+  background-color: #80C29B;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#agenda .tableau > div{
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: #B6DDC1;
+}
+
+#agenda .tableau > div .title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  padding: 10px;
+}
+
+#projets{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px
+}
+
+#projets .question{
+  position: relative;
+  padding: 150px 0 0 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#projets .question div{
+  width: 400px;
+  background-color: #80C29B;
+  padding: 25px 0 25px 25px;
+  font-size: 30px;
+  border-radius: 20px 0 0 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#projets div.liste_projets{
+  flex:1;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  margin: 20px;
+}
+
+#projets div.liste_projets > div{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #B6DDC1;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#projets div.liste_projets .titre{
+  font-size: 30px;
+}
+
+#projets div.liste_projets .description{
+  flex: 1;
+}
+
+#projets div.liste_projets .plus{
+  background-color: #80C29B;  
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#projets div.liste_projets .plus:hover{
+  background-color: #F1BD71;
+}
+
+#login{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }

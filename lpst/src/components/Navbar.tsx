@@ -4,7 +4,7 @@ const Navbar = () => {
     const [active, setActive] = useState([true, false, false, false, false, false])
 
     const majActive = (index: number) => () => {
-        const newActive = active.map((_, i) => i === index)
+        const newActive = active.map((_, i) => i === index);
         setActive(newActive)
     }
 
@@ -17,7 +17,7 @@ const Navbar = () => {
                     <li className={active[2] ? 'active' : ''} onClick={majActive(2)}>Newsletter</li>
                     <li className={active[3] ? 'active' : ''} onClick={majActive(3)}>Jardin</li>
                     <li className={active[4] ? 'active' : ''} onClick={majActive(4)}>Agenda</li>
-                    <li className={active[5] ? 'active' : ''} onClick={majActive(5)}>Projet</li>
+                    <li className={active[5] ? 'active' : ''} onClick={majActive(5)}>Projets</li>
                 </ul>
                 <ul>
                     <li>

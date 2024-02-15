@@ -1,19 +1,93 @@
 import { useEffect, useState } from "react"
+import { eachDayOfInterval, format } from 'date-fns';
 
 const Agenda = () => {
 
     const [mounth, setMounth] = useState('')
+    const [year, setYear] = useState('')
+    const [dateSelect, setDateSelect] = useState('')
     const [numberMounth, setNumberMounth] = useState(0)
+    const [tableau, setTableau] = useState<JSX.Element>(<></>)
+    const [active, setActive] = useState<boolean[]>([])
     
     const liste_mounth = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
-    
+    const liste_day = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+
+    function getDatesInMonth(month: number, year: number) {
+        const startDate = new Date(year, month - 1, 1);
+        const endDate = new Date(year, month, 0);
+        const datesInMonth = eachDayOfInterval({ start: startDate, end: endDate });
+        return datesInMonth.map((date: any) => format(date, 'yyyy-MM-dd'));
+    }
+
+    function majActive(index: number) {
+        let newActive: boolean[] = [] 
+        const today = new Date();
+        const month = numberMounth + 1;
+        const year = numberMounth >= 8 ? today.getFullYear() - 1 : today.getFullYear();
+        const datesInMonth = getDatesInMonth(month, year);
+        for(let i = 0; i < datesInMonth.length; i++) {
+            newActive.push(i == index);
+            if(i == index){
+                const dateSet = new Date(datesInMonth[i]);
+                setDateSelect(liste_day[dateSet.getDay()] + ' ' + dateSet.getDate() + ' ' + liste_mounth[dateSet.getMonth()] + ' ' + dateSet.getFullYear());
+            }
+        };
+        setActive(newActive);
+    }
+
     useEffect(() => {
-        setNumberMounth(0);
+        const today = new Date();
+        majActive(today.getDate() - 1);
+        setNumberMounth(today.getMonth());
     }, []);
 
     useEffect(() => {
         setMounth(liste_mounth[numberMounth])
-    }, [numberMounth]);
+
+        const today = new Date();
+        const month = numberMounth + 1;
+        console.log(today.getMonth());
+        let year = numberMounth >= 8 ? today.getFullYear() - 1 : today.getFullYear();
+        year = today.getMonth() >= 8 ? year + 1 : year;
+        setYear(year.toString());
+        const datesInMonth = getDatesInMonth(month, year);
+        const day = new Date(datesInMonth[0])
+
+        let tableau = <></>;
+        for (let i = 0; i < Math.round((datesInMonth.length + day.getDay())/7 + 0.25); i++) { 
+            let ligne = <></>;
+            for (let j = 0; j < 7; j++) {
+                const x = i;
+                const y = j;
+                if (i*7 + j + 1 < day.getDay() || i*7 + j + 1 >= datesInMonth.length + day.getDay()) {
+                    ligne = (
+                        <>
+                            {ligne}
+                            <td></td>
+                        </>
+                    )
+                } else {
+                    ligne = (
+                        <>
+                            {ligne}
+                            <td className={active[x*7 + y - day.getDay() + 1] ? 'active day' : 'day'} onClick={() => majActive(x*7 + y - day.getDay() + 1)}>{i*7 + j - day.getDay() + 2}</td>
+                        </>
+                    )
+                }
+            
+            }
+            tableau = (
+                <>
+                    {tableau}
+                    <tr>
+                        {ligne}
+                    </tr>
+                </>
+            )
+        }
+        setTableau(tableau);
+    }, [numberMounth, active]);
 
     const changeMounth = (value: number) => {
         setNumberMounth((12 + numberMounth + value)%12)
@@ -26,7 +100,7 @@ const Agenda = () => {
                 <div className="select_mounth">
                     <div>
                         <img onClick={() => changeMounth(-1)} src="src/assets/arrow_back.svg" alt="arrow" />
-                        {mounth}
+                        {mounth} - {year}
                         <img onClick={() => changeMounth(1)} src="src/assets/arrow_forward.svg" alt="arrow" />
                     </div>
                 </div>
@@ -45,39 +119,12 @@ const Agenda = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>14</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>16</td>
-                            <td>17</td>
-                            <td>18</td>
-                            <td>19</td>
-                            <td>20</td>
-                            <td>21</td>
-                        </tr>
-                        <tr>
-                            <td>18h00</td>
-                            <td>Yoga</td>
-                        </tr>
+                        {tableau}
                     </tbody>
                 </table>
+                <div>
+                    <div className="title">{dateSelect}</div>
+                </div>
             </div>
         </div>
     )

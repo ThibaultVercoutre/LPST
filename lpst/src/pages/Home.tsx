@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Description from '../components/Description'
 import Newsletter from '../components/Newsletter'
 import Previsions from '../components/Previsions'
+import Agenda from '../components/Agenda'
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
                 <Description />
                 <Newsletter />
                 <Previsions />
+                <Agenda />
             </main>
         </>
     )

@@ -84,6 +84,11 @@ nav ul li.active{
 
 }
 
+nav ul li a{
+  width: 100%;
+  height: 100%;
+}
+
 nav ul li img{
   width: 100%;
   height: 100%;
@@ -348,11 +353,77 @@ nav ul li img{
   background-color: #F1BD71;
 }
 
-#login{
+#login, #signin{
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 25px;
+  background-color: #EDEDED;
+}
+
+#login .form, #signin .form{
+  background-color: #80C29B;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 25px;
+}
+
+#signin .form .informations{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#signin .form .informations > div{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#login .form input, #signin .form input{
+  width: 100%;
+  padding: 20px;
+  font-size: 15px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #B6DDC1;
+}
+
+#login .form button, #signin .form button{
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #B6DDC1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#login .form button:hover, #signin .form button:hover{
+  background-color: #F1BD71;
+}
+
+#login .form a, #signin .form a{
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#login .form a:hover, #signin .form a:hover{
+  text-decoration: underline;
 }

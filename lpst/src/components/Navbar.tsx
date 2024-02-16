@@ -21,7 +21,7 @@ const Navbar = () => {
                 </ul>
                 <ul>
                     <li>
-                        <img src="src/assets/login.svg" alt="" />
+                        <a href='/login'><img src="src/assets/login.svg" alt="" /></a>
                     </li>
                 </ul>
             </div>

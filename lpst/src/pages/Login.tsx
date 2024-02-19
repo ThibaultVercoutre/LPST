@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 const Login = () => {
 
@@ -9,6 +9,8 @@ const Login = () => {
 
     const connect = () => {
         if (formData.name === "truc" && formData.password === "truc") {
+            
+            localStorage.setItem("user", JSON.stringify(1));
             console.log("ok");
         }
     }
@@ -29,7 +31,7 @@ const Login = () => {
                 <input type="text" placeholder="" value={formData.name} name="name" onChange={handleInputChange}/>
                 <label htmlFor="username">Password</label>
                 <input type="password" placeholder="" value={formData.password} name="password" onChange={handleInputChange}/>
-                <button onClick={connect} type="button" className="login">Se connecter</button>
+                <a onClick={connect} href="/" className="button login">Se connecter</a>
                 <a className="signin" href="/signin">S'inscrire</a>
             </div>
         </div>

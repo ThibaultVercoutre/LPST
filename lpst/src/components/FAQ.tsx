@@ -1,7 +1,11 @@
 const FAQ = () => {
     return (
         <div id="faq">
-            <div>FAQ</div>
+            <div><img src="src/assets/FAQ.png" alt="FAQ" /></div>
+            <div>
+                <div className="question">Question</div>
+                <div className="reponse">Réponse</div>
+            </div>
         </div>
     )
 }

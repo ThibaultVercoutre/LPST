@@ -463,7 +463,33 @@ nav ul li img{
 #billeterie, #inscription, #faq, #administration{
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  gap: 50px;
+  /* gap: 50px; */
+}
+
+#faq div{
+  display: flex;
+  /* gap: 20px; */
+  padding: 50px;
+}
+
+#faq div .question{
+  border: 1px solid black;
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+#faq div .reponse{
+  border: 1px solid black;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+#faq img{
+  padding-right: 30vw;
+  padding-top: 20vh;
 }

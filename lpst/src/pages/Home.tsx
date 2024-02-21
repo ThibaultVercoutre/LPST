@@ -21,7 +21,7 @@ const Home = () => {
     const [pageUser, setPageUser] = useState<number>(2);
 
     const components: {[key: number]: JSX.Element} = {
-        1 : <Header />,
+        1: <Header />,
         2: <Billeterie />,
         3: <Inscription />,
         4: <FAQ />,

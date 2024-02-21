@@ -18,7 +18,7 @@ const Home = () => {
     
     const [isConnected, setIsConnected] = useState(false);
     const [page, setPage] = useState<number>(0);
-    const [pageUser, setPageUser] = useState<number>(2);
+    const [pageUser, setPageUser] = useState<number>(1);
 
     const components: {[key: number]: JSX.Element} = {
         1: <Header />,
@@ -48,7 +48,7 @@ const Home = () => {
     return (
         <>
             {page == 0 ? <Navbar user = {user} setIsConnected={setIsConnected}/> : <Navbaruser setPageUser={setPageUser} user = {user} setIsConnected={setIsConnected}/> }
-            {isConnected ? <Navbarconnect setPage={setPage}/> : null}
+            {isConnected ? <Navbarconnect setPage={setPage} setPageUser={setPageUser}/> : null}
             <main>
                 { page == 0 ? <Header /> : null }
                 { page == 0 ? <Description /> : null }

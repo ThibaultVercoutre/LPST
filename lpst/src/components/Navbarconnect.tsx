@@ -2,14 +2,15 @@ import {useState} from 'react'
 
 interface NavbarconnectProps {
     setPage: (page: number) => void;
+    setPageUser: (page: number) => void;
 }
 
-const Navbarconnect = ({setPage}: NavbarconnectProps) => {
+const Navbarconnect = ({setPage, setPageUser}: NavbarconnectProps) => {
     const [active, setActive] = useState([true, false])
 
     const majActive = (index: number) => () => {
         const newActive = active.map((_, i) => i === index);
-        
+        if(index === 0) setPageUser(1);
         setPage(index);
         setActive(newActive)
     }

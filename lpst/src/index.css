@@ -4,6 +4,15 @@
     url("/src/fonts/Lexend-VariableFont_wght.ttf") format("truetype");
 }
 
+:root{
+  --color1: #80C29B;
+  --color2: #B6DDC1;
+  --color3: #ADC958;
+  --color4: #BF512C;
+  --color5: #F1BD71;
+  --color6: #EDEDED;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -13,7 +22,7 @@
 }
 
 body{
-  background-color: #EDEDED;;
+  background-color: var(--color6);;
 }
 
 body main{
@@ -63,7 +72,7 @@ nav div{
   list-style: none;
   display: flex;
   flex-direction: column;
-  background-color: #ADC958;
+  background-color: var(--color3);
   padding: 10px;
   gap: 10px;
   border-radius: 30px;
@@ -73,7 +82,7 @@ nav div{
 nav ul{
   list-style: none;
   display: flex;
-  background-color: #ADC958;
+  background-color: var(--color3);
   padding: 10px;
   gap: 10px;
   border-radius: 30px;
@@ -105,12 +114,12 @@ nav ul li{
 }
 
 nav ul li:hover, .nav_connect ul li:hover{
-  background-color: #B6DDC1;
+  background-color: var(--color2);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 nav ul li.active, .nav_connect ul li.active{
-  background-color: #80C29B;
+  background-color: var(--color1);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -140,7 +149,7 @@ nav ul li img{
 
 #desc .question div{
   width: 400px;
-  background-color: #80C29B;
+  background-color: var(--color1);
   padding: 25px 0 25px 25px;
   font-size: 30px;
   border-radius: 20px 0 0 20px;
@@ -178,7 +187,7 @@ nav ul li img{
 #newsletter .question div{
   width: 400px;
   text-align: right;
-  background-color: #80C29B;
+  background-color: var(--color1);
   padding: 25px 25px 25px 0;
   font-size: 30px;
   border-radius: 0 20px 20px 0;
@@ -198,7 +207,7 @@ nav ul li img{
 
 #previsions .question div{
   width: 400px;
-  background-color: #80C29B;
+  background-color: var(--color1);
   padding: 25px 0 25px 25px;
   font-size: 30px;
   border-radius: 20px 0 0 20px;
@@ -221,7 +230,7 @@ nav ul li img{
 #agenda .question > div:nth-child(1){
   width: 400px;
   text-align: right;
-  background-color: #80C29B;
+  background-color: var(--color1);
   padding: 25px 25px 25px 0;
   font-size: 30px;
   border-radius: 0 20px 20px 0;
@@ -239,7 +248,7 @@ nav ul li img{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #BF512C;
+  background-color: var(--color4);
   padding: 10px;
   font-size: 30px;
   border-radius: 30px;
@@ -255,7 +264,7 @@ nav ul li img{
 }
 
 #agenda .select_mounth > div img:hover{
-  background-color: #F1BD71;
+  background-color: var(--color5);
 }
 
 #agenda .tableau{
@@ -278,26 +287,26 @@ nav ul li img{
 }
 
 #agenda .tableau table thead tr th{
-  background-color: #B6DDC1;
+  background-color: var(--color2);
   padding: 20px;
 }
 
 #agenda .tableau table tbody tr td{
-  background-color: #B6DDC1;
+  background-color: var(--color2);
   text-align: center;
   margin: 5px;
   padding: 10px;
-  border: 10px solid #EDEDED;
+  border: 10px solid var(--color6);
 }
 
 #agenda .tableau table tbody tr td.day.active {
-  background-color: #80C29B;
+  background-color: var(--color1);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
 }
 
 #agenda .tableau table tbody tr td.day:hover{
-  background-color: #80C29B;
+  background-color: var(--color1);
   cursor: pointer;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -308,7 +317,7 @@ nav ul li img{
   height: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  background-color: #B6DDC1;
+  background-color: var(--color2);
 }
 
 #agenda .tableau > div .title{
@@ -335,7 +344,7 @@ nav ul li img{
 
 #projets .question div{
   width: 400px;
-  background-color: #80C29B;
+  background-color: var(--color1);
   padding: 25px 0 25px 25px;
   font-size: 30px;
   border-radius: 20px 0 0 20px;
@@ -357,7 +366,7 @@ nav ul li img{
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #B6DDC1;
+  background-color: var(--color2);
   border-radius: 20px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -371,7 +380,7 @@ nav ul li img{
 }
 
 #projets div.liste_projets .plus{
-  background-color: #80C29B;  
+  background-color: var(--color1);  
   padding: 20px;
   border-radius: 20px;
   cursor: pointer;
@@ -380,7 +389,7 @@ nav ul li img{
 }
 
 #projets div.liste_projets .plus:hover{
-  background-color: #F1BD71;
+  background-color: var(--color5);
 }
 
 #login, #signin{
@@ -390,11 +399,11 @@ nav ul li img{
   align-items: center;
   justify-content: center;
   gap: 25px;
-  background-color: #EDEDED;
+  background-color: var(--color6);
 }
 
 #login .form, #signin .form{
-  background-color: #80C29B;
+  background-color: var(--color1);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -428,7 +437,7 @@ nav ul li img{
   border-radius: 15px;
   border: none;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  background-color: #B6DDC1;
+  background-color: var(--color2);
 }
 
 #login .form .button, #signin .form .button{
@@ -438,13 +447,13 @@ nav ul li img{
   border-radius: 15px;
   border: none;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  background-color: #B6DDC1;
+  background-color: var(--color2);
   cursor: pointer;
   transition: 0.3s;
 }
 
 #login .form .button:hover, #signin .form .button:hover{
-  background-color: #F1BD71;
+  background-color: var(--color5);
   text-decoration: none;
 }
 
@@ -466,13 +475,106 @@ nav ul li img{
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* gap: 50px; */
+}
+
+#billeterie{
+  justify-content: center;
+}
+
+#billeterie .produits{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#billeterie .produits{
+  flex-direction: row;
+  justify-content: center;
+  padding: 100px;
+}
+
+#billeterie .produits div{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 5px
+}
+
+#billeterie .produits > div > div:not(.image){
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+}
+
+#billeterie .produits > div > div:not(.image) .compteur{
+  display: flex;
+  gap: 0px;
+  justify-content: center;
+}
+
+#billeterie .produits > div > div:not(.image) .compteur div{
+  background-color: var(--color2);
+  padding: 10px;
+  cursor: pointer;
+}
+
+#billeterie .produits > div > div:not(.image) .compteur input{
+  width: 50px;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+}
+
+#billeterie .produits > div > div:not(.image) .compteur div.moins{
+  border-radius: 5px 0 0 5px;
+}
+
+#billeterie .produits > div > div:not(.image) .compteur div.plus{
+  border-radius: 0 5px 5px 0;
+}
+
+#billeterie .produits > div > div:not(.image) .compteur div:hover{
+  background-color: var(--color1);
+}
+
+#billeterie .produits > div > div:not(.image) h1{
+  /* font-size: 50px; */
+  text-align: center;
+}
+
+#billeterie .produits div div.image{
+  flex: 2;
+}
+
+#billeterie .produits div div img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#billeterie .commander{
+  padding: 20px;
+  background-color: var(--color1);
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#billeterie .commander:hover{
+  background-color: var(--color3);
+
 }
 
 #faq div{
   display: flex;
   /* gap: 20px; */
+}
+
+#faq div div{
   padding: 50px;
+  flex: 1;
 }
 
 #faq div .question{
@@ -480,6 +582,7 @@ nav ul li img{
   border-top: 0;
   border-left: 0;
   border-bottom: 0;
+  font-style: italic;
 }
 
 #faq div .reponse{
